@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from tweet import urls as tweet_url
+from users import urls as user_url
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('api/v1/', include(tweet_url)),
+    path('api/v1/', include(user_url)),
 ]
